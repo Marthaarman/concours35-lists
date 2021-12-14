@@ -1,0 +1,49 @@
+/* CSS Document */
+
+.lists {
+	display:inline-block;
+	float:left;
+	width:50%;
+	height:auto;
+}
+
+.lists .list_button {
+	display:inline-block;
+	float:left;
+	width:100%;
+	height:auto;
+	font-family:'Arial';
+	margin:0px 0px 10px 0px;
+}
+
+.lists .list_button .title {
+	display:inline-block;
+	float:left;
+	width:70%;
+	height:auto;
+	padding:15px 2% 15px 2%;
+	line-height:30px;
+	color:#F4f4f4;
+}
+
+.lists .list_button .qr {
+	display:inline-block;
+	float:right;
+	width:12.5%;
+	text-align:center;
+	height:auto;
+	padding:15px 0px 15px 0px;
+	margin-left:1px;
+	line-height:30px;
+	color:#F4f4f4;
+}
+
+.lists .list_button .qr, 
+.lists .list_button .title {
+	background-color:#1583C8;
+}
+
+.lists .list_button .qr:hover, 
+.lists .list_button .title:hover {
+	background-color:#378EC5;
+}
