@@ -15,6 +15,7 @@ switch($type){
 		$action = 'create_qr';
 		index_content($action);
 		break;
+	case 'show_starts':
 	case 'starts':
 		//show start files or starts
 		if(isset($_GET['list'])) {
@@ -24,6 +25,7 @@ switch($type){
 		}
 		index_content($action);
 		break;
+	case 'show_results':
 	case 'results':
 		//show result files or results
 		if(isset($_GET['list'])) {
@@ -44,12 +46,15 @@ switch($type){
 
 
 function index_content($action) {
+	global $SETTINGS;
 	echo "
 		<!doctype html>
 		<html>
 			<head>
 				<meta charset='utf-8'>
-				<title>Concours35 lists</title>";
+				<title>{$SETTINGS['site_title']}</title>
+				<link rel='stylesheet' type='text/css' href='assets/layout.css' />
+				";
 	
 				//	add action to allow input in the header
 				// both action specific and general
@@ -62,8 +67,12 @@ function index_content($action) {
 				// call action for pre page content
 				do_action("pre_page_content");
 	
+				echo "<div id='page_content'>";
+	
 				//call action for this page
 				do_action($action);
+	
+				echo "</div>";
 	
 				// call action for post page content
 				do_action("post_page_content");

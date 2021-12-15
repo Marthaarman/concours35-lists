@@ -1,0 +1,30 @@
+/* CSS Document */
+
+#page_content {
+	display:inline-block;
+	float:left;
+	width:50%;
+	height:auto;
+	margin:0px 25% 0px 25%;
+}
+
+#page_title {
+	display:inline-block;
+	float:left;
+	width:100%;
+	height:auto;
+	text-align:center;
+	font-family:'Arial';
+	line-height:50px;
+	border-bottom:1px solid #ccc;
+	margin:20px 0px 0px 0px;
+}
+
+.button {
+	background-color:#1583C8;
+}
+
+.button:hover {
+	background-color:#378EC5;
+	cursor:pointer;
+}

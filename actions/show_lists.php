@@ -25,10 +25,11 @@ function show_lists_func($filter = false) {
 			break;
 	}
 	
-	echo "<div class='lists'>";
+	echo "<div id='lists'>";
 	
 	// obtain all files with this search query
 	$files = glob("files/{$search_query}");
+	sort($files);
 	foreach($files as $file) {
 		make_list_button($file);
 	}
@@ -47,11 +48,11 @@ function make_list_button($file) {
 	switch($type) {
 		case 'startlijst':
 			$button_title = "[startlijst] {$title}";
-			$button_link = "index.php?type=show_starts&file=".base64_encode($file);
+			$button_link = "index.php?type=show_starts&list=".base64_encode($file);
 			break;
 		case 'uitslag':
 			$button_title = "[uitslag] {$title}";
-			$button_link = "index.php?type=show_results&file=".base64_encode($file);
+			$button_link = "index.php?type=show_results&list=".base64_encode($file);
 			break;
 	}
 	
@@ -60,13 +61,13 @@ function make_list_button($file) {
 	echo "
 		<div class='list_button'>
 			<a href='{$button_link}'>
-				<div class='title'>{$button_title}</div>
+				<div class='list_button_title button'>{$button_title}</div>
 			</a>
 			<a href='{$qr_link}'>
-				<div class='qr'>QR</div>
+				<div class='list_button_qr button'>QR</div>
 			</a>
 			<a href='{$qr_link}'>
-				<div class='qr'>link</div>
+				<div class='list_button_qr button'>link</div>
 			</a>
 		</div>
 	";

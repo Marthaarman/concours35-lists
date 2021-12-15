@@ -1,13 +1,14 @@
 /* CSS Document */
 
-.lists {
+#lists {
 	display:inline-block;
 	float:left;
-	width:50%;
+	width:100%;
 	height:auto;
+	margin:20px 0px 0px 0px;
 }
 
-.lists .list_button {
+#lists .list_button {
 	display:inline-block;
 	float:left;
 	width:100%;
@@ -16,7 +17,7 @@
 	margin:0px 0px 10px 0px;
 }
 
-.lists .list_button .title {
+#lists .list_button .list_button_title {
 	display:inline-block;
 	float:left;
 	width:70%;
@@ -26,7 +27,7 @@
 	color:#F4f4f4;
 }
 
-.lists .list_button .qr {
+#lists .list_button .list_button_qr {
 	display:inline-block;
 	float:right;
 	width:12.5%;
@@ -36,14 +37,4 @@
 	margin-left:1px;
 	line-height:30px;
 	color:#F4f4f4;
-}
-
-.lists .list_button .qr, 
-.lists .list_button .title {
-	background-color:#1583C8;
-}
-
-.lists .list_button .qr:hover, 
-.lists .list_button .title:hover {
-	background-color:#378EC5;
 }

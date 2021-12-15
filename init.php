@@ -1,5 +1,9 @@
 <?php
 
+//	include settings.php
+include_once('settings.php');
+
+
 //	include all function files
 $files = glob('functions/*.php');
 foreach($files as $file) {

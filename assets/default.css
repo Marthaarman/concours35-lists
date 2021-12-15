@@ -1,0 +1,41 @@
+/* CSS Document */
+
+#default_buttons {
+	display:inline-block;
+	float:left;
+	width:100%;
+	height:auto;
+	margin:20px 0px 0px 0px;
+}
+
+#default_buttons a {
+	width:49%;
+	display:inline-block;
+	float:left;
+	height:auto;
+}
+
+#default_buttons a .default_button {
+	display:inline-block;
+	float:left;
+	width:100%;
+	height:auto;
+	line-height:30px;
+	padding:15px 0px;
+	color:#F4f4f4;
+	text-align:center;
+	font-family:'Arial';
+}
+
+#default_buttons a .default_button:hover {
+	
+}
+	
+
+#default_buttons a:first-of-type {
+	margin-right:1%;
+}
+
+#default_buttons a:last-of-type {
+	margin-left:1%;
+}
