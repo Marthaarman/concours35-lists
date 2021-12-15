@@ -19,6 +19,7 @@ $SETTINGS = array(
 		'Pony' => 'Pony',
 		'Paard' => 'Paard',
 		'Vereniging' => 'Vereniging',
+		'Vader' => 'Vader',
 		'sptn1' => 'sptn1',
 		'tijd1' => 'tijd1',
 		'sptn2' => 'sptn2',
