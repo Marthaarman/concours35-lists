@@ -28,31 +28,29 @@ function show_lists_func($filter = false) {
 	echo "<div id='lists'>";
 	
 	// obtain all files with this search query
-	$files = glob("files/{$search_query}");
-	sort($files);
-	foreach($files as $file) {
-		make_list_button($file);
+	$lists = glob("files/{$search_query}");
+	sort($lists);
+	foreach($lists as $list) {
+		make_list_button($list);
 	}
 	
 	echo "</div>";
 }
 
-function make_list_button($file) {
+function make_list_button($list) {
 	//	set basic variables for the given button
 	//	variable name represents its function
-	$contents = file_get_contents($file);
-	$lines = explode(PHP_EOL, $contents);
-	$title = str_replace('titel:', '', $lines[1]);
+	$title = get_list_title($list);
 	
-	$type = strpos($file,'startlijst') !== false ? 'startlijst' : 'uitslag';
+	$type = strpos($list,'startlijst') !== false ? 'startlijst' : 'uitslag';
 	switch($type) {
 		case 'startlijst':
 			$button_title = "[startlijst] {$title}";
-			$button_link = "index.php?type=show_starts&list=".base64_encode($file);
+			$button_link = "index.php?type=show_starts&list=".base64_encode($list);
 			break;
 		case 'uitslag':
 			$button_title = "[uitslag] {$title}";
-			$button_link = "index.php?type=show_results&list=".base64_encode($file);
+			$button_link = "index.php?type=show_results&list=".base64_encode($list);
 			break;
 	}
 	
