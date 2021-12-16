@@ -1,5 +1,8 @@
 <?php
 
+//	make sure character output is correct:
+header("Content-Type: text/html; charset=ISO-8859-1");
+
 //	include settings.php
 include_once('settings.php');
 
