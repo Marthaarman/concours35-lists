@@ -41,20 +41,20 @@ function make_list_button($list) {
 	//	set basic variables for the given button
 	//	variable name represents its function
 	$title = get_list_title($list);
-	
+	$return_type = isset($_GET['type']) ? $_GET['type'] : 'default';
 	$type = strpos($list,'startlijst') !== false ? 'startlijst' : 'uitslag';
 	switch($type) {
 		case 'startlijst':
 			$button_title = "[startlijst] {$title}";
-			$button_link = "index.php?type=show_starts&list=".base64_encode($list);
+			$button_link = "index.php?type=show_starts&return_type={$return_type}&list=".base64_encode($list);
 			break;
 		case 'uitslag':
 			$button_title = "[uitslag] {$title}";
-			$button_link = "index.php?type=show_results&list=".base64_encode($list);
+			$button_link = "index.php?type=show_results&return_type={$return_type}&list=".base64_encode($list);
 			break;
 	}
 	
-	$qr_link = "index.php?type=qr&link=".base64_encode($button_link);
+	$qr_link = "index.php?type=qr&return_type={$return_type}&list={$list}&link=".base64_encode($button_link);
 	
 	echo "
 		<div class='list_button'>

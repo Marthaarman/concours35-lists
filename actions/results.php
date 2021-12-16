@@ -16,6 +16,7 @@ add_action('show_result_files', 'show_result_lists_func');
 //	result list filter, show all result lists
 //	also show the title of the page
 function show_result_lists_func() {
+	back_button();
 	show_result_lists_title();
 	do_action('show_lists', 'results');
 }
@@ -36,6 +37,7 @@ add_action('show_results', 'show_results_func');
 //	set the title of the page
 function show_results_func() {
 	global $SETTINGS;
+	back_button();
 	show_result_list_title();
 	do_action('show_list', array($_GET['list'], $SETTINGS['results_columns']));
 }

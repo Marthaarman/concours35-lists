@@ -16,6 +16,7 @@ add_action('show_start_files', 'show_start_lists_func');
 //	start list filter, show all start lists
 //	also show the title of the page
 function show_start_lists_func() {
+	back_button();
 	show_start_lists_title();
 	do_action('show_lists', 'starts');
 }
@@ -23,7 +24,7 @@ function show_start_lists_func() {
 //	function for start lists title
 function show_start_lists_title() {
 	global $SETTINGS;
-	echo "<div id='page_title'>{$SETTINGS['site_title']}</div>";
+	echo "<div id='page_title'>{$SETTINGS['site_title']} - Starts</div>";
 }
 
 
@@ -36,6 +37,7 @@ add_action('show_starts', 'show_starts_func');
 //	set the title of the page
 function show_starts_func() {
 	global $SETTINGS;
+	back_button();
 	show_start_list_title();
 	do_action('show_list', array($_GET['list'], $SETTINGS['starts_columns']));
 }

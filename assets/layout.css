@@ -28,3 +28,14 @@
 	background-color:#378EC5;
 	cursor:pointer;
 }
+
+#back_button {
+	display:inline-block;
+	float:left;
+	width:auto;
+	height:auto;
+	line-height:30px;
+	margin:5px 0px 5px 0px;
+	padding:0px 10px 0px 10px;
+	border-bottom:1px solid #ccc;
+}
