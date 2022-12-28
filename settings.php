@@ -3,26 +3,23 @@
 $SETTINGS = array(
 	'site_title' => "Concours35 Lists",
 	'starts_columns' => array(
-		'tijd' => 'Starttijd',
-		'nr.' => 'Start nr',
-		'Hnr' => 'Hnr',
-		'Ruiter' => 'Ruiter',
-		'Pony' => 'Pony',
-		'Paard' => 'Paard',
-		'Vereniging' => 'Vereniging',
-		'Vader' => 'Vader'
+		'nr' => 'Start nr',
+		'na' => 'Ruiter',
+		'po' => 'Pony',
+		'pa' => 'Paard',
+		've' => 'Vereniging',
+		'va' => 'Vader'
 	),
 	'results_columns' => array(
-		'rang' => 'Rang',
-		'Hnr' => 'Hnr',
-		'Ruiter' => 'Ruiter',
-		'Pony' => 'Pony',
-		'Paard' => 'Paard',
-		'Vereniging' => 'Vereniging',
-		'Vader' => 'Vader',
-		'sptn1' => 'sptn1',
-		'tijd1' => 'tijd1',
-		'sptn2' => 'sptn2',
-		'tijd2' => 'tijd2'
+		'nr' => 'Rang',
+		'na' => 'Ruiter',
+		'po' => 'Pony',
+		'pa' => 'Paard',
+		've' => 'Vereniging',
+		'r_ftntot1' => 'sptn1',
+		'r_tijd1' => 'tijd1',
+		'r_ftntot2' => 'sptn2',
+		'r_tijd2' => 'tijd2',
+		'va' => 'Vader'
 	)
 );

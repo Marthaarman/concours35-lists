@@ -65,20 +65,34 @@ function index_content($action) {
 				echo "
 			</head>
 			<body>";
-				// call action for pre page content
-				do_action("pre_page_content");
-	
-				echo "<div id='page_content'>";
-	
-				//call action for this page
-				do_action($action);
-	
-				echo "</div>";
-	
-				// call action for post page content
-				do_action("post_page_content");
+				//	wrapper around page
+				echo "<div id='page_wrap'>";
 
-				echo "
+					// call action for pre page content
+					do_action("pre_page_content");
+		
+					echo "<div id='page_content'>";
+		
+					//call action for this page
+					do_action($action);
+		
+					echo "</div>";
+		
+					// call action for post page content
+					do_action("post_page_content");
+
+					//	footer
+					echo "
+					<div id='page_footer_spacer'></div>
+					<div id='page_footer'>
+						Door MHWD.nl & weedo.nu, vrijwilligers planning
+					</div>
+					";
+				
+				// end page wrap
+				echo "</div>";
+
+			echo "
 			</body>
 		</html>
 	";

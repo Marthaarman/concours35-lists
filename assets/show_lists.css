@@ -38,3 +38,33 @@
 	line-height:30px;
 	color:#F4f4f4;
 }
+
+#list {
+	display:inline-block;
+	float:left;
+	width:100%;
+	height:auto;
+	margin:20px 0px 20px 0px;
+}
+
+#list table {
+	border-collapse: collapse;
+}
+
+#list table thead {
+	background-color:#999;
+	border:none;
+	border-collapse: collapse;
+}
+
+#list table tr:nth-child(even) {
+	background-color:#ccc;
+}
+
+#list table tr td,
+#list table thead td {
+	border:none;
+	border-collapse: collapse;
+	padding:5px 5px;
+	white-space: nowrap;
+}

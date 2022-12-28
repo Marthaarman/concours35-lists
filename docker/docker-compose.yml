@@ -1,0 +1,18 @@
+version: "3.1"
+services:
+    python_synctool:
+        image: python:3.9
+        volumes:
+        - ./python/logs:/opt/app/log
+        - ../files:/opt/app/files
+        build:
+            context: .
+            dockerfile: Dockerfile.synctool
+
+networks:
+    default:
+
+volumes:
+    persistent:
+
+

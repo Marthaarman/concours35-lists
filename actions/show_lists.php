@@ -14,14 +14,17 @@ function show_lists_func($filter = false) {
 	$search_query = "";
 	switch($filter) {
 		case 'starts':
-			$search_query = "concours startlijst rooster *.dat";
+			$search_query = "rst-*.rst";
+			// $search_query = "rst-*.rst";
 			break;
 		case 'results':
-			$search_query = "concours uitslag rooster *.dat";
+			$search_query = "rst-*.rstss";
+			// $search_query = "rst-*.rsts";
 			break;
 		case 'none':
 		default:
-			$search_query = "concours *.dat";
+			// $search_query = "rst-*";
+			$search_query = "rst-*.rst";
 			break;
 	}
 	
@@ -42,7 +45,7 @@ function make_list_button($list) {
 	//	variable name represents its function
 	$title = get_list_title($list);
 	$return_type = isset($_GET['type']) ? $_GET['type'] : 'default';
-	$type = strpos($list,'startlijst') !== false ? 'startlijst' : 'uitslag';
+	$type = strpos($list,'rsts') !== false ? 'uitslag' : 'startlijst';
 	switch($type) {
 		case 'startlijst':
 			$button_title = "[startlijst] {$title}";
