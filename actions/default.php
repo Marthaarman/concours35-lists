@@ -3,7 +3,7 @@
 add_action('html_head', 'default_css');
 
 function default_css() {
-	echo "<link rel='stylesheet' type='text/css' href='assets/default.css' />";
+	echo "<link rel='stylesheet' type='text/css' href='assets/default.css?rnd=1' />";
 }
 
 

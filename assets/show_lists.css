@@ -42,9 +42,12 @@
 #list {
 	display:inline-block;
 	float:left;
-	width:100%;
+	width:auto;
 	height:auto;
 	margin:20px 0px 20px 0px;
+	position:relative;
+	left:50%;
+	transform:translateX(-50%);
 }
 
 #list table {

@@ -8,7 +8,8 @@ $SETTINGS = array(
 		'po' => 'Pony',
 		'pa' => 'Paard',
 		've' => 'Vereniging',
-		'va' => 'Vader'
+		'va' => 'Vader',
+		'sh' => 'HC'
 	),
 	'results_columns' => array(
 		'nr' => 'Rang',
@@ -20,6 +21,7 @@ $SETTINGS = array(
 		'r_tijd1' => 'tijd1',
 		'r_ftntot2' => 'sptn2',
 		'r_tijd2' => 'tijd2',
-		'va' => 'Vader'
+		'va' => 'Vader',
+		'sh' => 'HC'
 	)
 );

@@ -54,7 +54,7 @@ function index_content($action) {
 				<meta charset='utf-8'>
 				<title>{$SETTINGS['site_title']}</title>
 				<!--<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>!-->
-				<link rel='stylesheet' type='text/css' href='assets/layout.css' />
+				<link rel='stylesheet' type='text/css' href='assets/layout.css?rnd=1' />
 				";
 	
 				//	add action to allow input in the header

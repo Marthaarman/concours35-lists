@@ -20,10 +20,13 @@ body, html {
 
 #page_content {
 	display:inline-block;
-	float:left;
-	width:50%;
+	position:relative;
+	width:auto;
 	height:auto;
-	margin:0px 25% 0px 25%;
+	left:50%;
+	transform:translateX(-50%);
+	clear:both;
+	float:left;
 }
 
 #page_title {
@@ -36,6 +39,8 @@ body, html {
 	line-height:50px;
 	border-bottom:1px solid #ccc;
 	margin:20px 0px 0px 0px;
+	clear:both;
+	position:relative;
 }
 
 .button {

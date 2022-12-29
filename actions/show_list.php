@@ -6,6 +6,7 @@ function show_list_func($args) {
 	global $SETTINGS;
 	//	load the functions arguments into variables
 	$list = base64_decode($args[0]);
+	// echo $list;
 	
 	//	all the allowed columns will be put in here by their index as value
 	$allowed_columns = array();
@@ -21,6 +22,9 @@ function show_list_func($args) {
 
 	$lines = explode(PHP_EOL, $contents);
 
+	$last_line = $lines[count($lines) - 2];
+	// print_pre(parse_last_line($last_line));
+
 	$rider_rows = [];
 	$rider_row = [];
 	$i = 0;
@@ -30,6 +34,7 @@ function show_list_func($args) {
 			if(count($rider_row) > 0) {
 				$i++;
 				$rider_row = array_merge(array('nr' => $i), $rider_row);
+				// print_pre($rider_row);
 				$rider_rows[] = $rider_row;
 				$rider_row = [];
 			}
@@ -108,11 +113,34 @@ function arrayfy_list($string) {
 function parse_line($line) {
 	$delimiter = '	';
 	$array = array();
+	$hc = false;
 	$line_components = explode($delimiter, $line);
 	foreach($line_components as $line_component) {
 		$key_value = explode(':', $line_component);
 		if(count($key_value) == 2) {
 			$array[$key_value[0]] = $key_value[1];
+		}
+		
+	}
+	
+	return $array;
+}
+
+function parse_last_line($line) {
+	$delimiter = '	';
+	$array = array();
+	$line_components = explode($delimiter, $line);
+	$iterations = 0;
+	foreach($line_components as $line_component) {
+		$key_value = explode(':', $line_component);
+		if(count($key_value) == 2) {
+			if($key_value[0] == 'dnr') {
+				$iterations++;
+				$array[$iterations.$key_value[0]] = $key_value[1];
+			}else {
+				$array[$key_value[0]] = $key_value[1];
+			}
+			
 		}
 	}
 
@@ -122,6 +150,7 @@ function parse_line($line) {
 function parse_lines($line_number, $lines) {
 	$parsed_lines = [];
 
+	//	parse the first line having 'status'
 	$parsed_line = parse_line($lines[$line_number]);
 	if(isset($parsed_line['status']) && !isset($parsed_line['roms'])) {
 		$parsed_lines = array_merge($parsed_lines, $parsed_line);
@@ -130,18 +159,30 @@ function parse_lines($line_number, $lines) {
 		return false;
 	}
 
+	//	parse lines following up that do not have 'status'
 	while(true) {
 		$parsed_line = parse_line($lines[$line_number]);
 		if(!isset($parsed_line['status'])) {
+			//	line does not have status, add line
 			$parsed_lines = array_merge($parsed_lines, $parsed_line);
 			$line_number++;
 		}else {
+			//	line does have status, do not add line and stop
 			break;
 		}
 		if(!isset($lines[$line_number])) {
+			//	line does no longer exist
 			break;
 		}
 	}
+
+	//	check for HC mark
+	if(isset($parsed_lines['sh'])) {
+		$parsed_lines['sh'] = $parsed_lines['sh'] == 1 ? 'Ja' : 'Nee';
+	}else {
+		$parsed_lines['sh'] = 'Nee';
+	}
+
 	return $parsed_lines;
 }
 

@@ -3,7 +3,7 @@
 add_action('html_head', 'show_lists_css');
 
 function show_lists_css() {
-	echo "<link rel='stylesheet' type='text/css' href='assets/show_lists.css' />";
+	echo "<link rel='stylesheet' type='text/css' href='assets/show_lists.css?rnd=1' />";
 }
 
 add_action('show_lists', 'show_lists_func');
