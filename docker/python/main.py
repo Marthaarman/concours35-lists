@@ -6,9 +6,10 @@ import signal
 
 #   settings
 path_to_concours35_lists = "files/"
-ftp_host = "ftp.manegebartels.nl"
+ftp_host = ""
 ftp_username = ""
 ftp_password = ""
+sync_interval_seconds = 60
 
 #   do not edit from here!
 stopcommand = False
@@ -51,7 +52,7 @@ def do_loop(_ftp):
         for remote_file in remote_files:
             if remote_file not in local_files:
                 _ftp.delete(remote_file)
-    time.sleep(2)
+    time.sleep(sync_interval_seconds)
 
     
 
