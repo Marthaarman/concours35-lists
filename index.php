@@ -53,6 +53,8 @@ function index_content($action) {
 			<head>
 				<meta charset='utf-8'>
 				<title>{$SETTINGS['site_title']}</title>
+				<meta name='viewport' content='width=device-width, initial-scale=1' />
+
 				<!--<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>!-->
 				<link rel='stylesheet' type='text/css' href='assets/layout.css?rnd=1' />
 				";

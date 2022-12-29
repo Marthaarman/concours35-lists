@@ -1,5 +1,9 @@
 /* CSS Document */
 
+* {
+	font-size:1.5vw;
+}
+
 #default_buttons {
 	display:inline-block;
 	float:left;
