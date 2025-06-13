@@ -6,9 +6,9 @@ import signal
 
 #   settings
 path_to_concours35_lists = "files/"
-ftp_host = ""
-ftp_username = ""
-ftp_password = ""
+ftp_host = "ftp.manegebartels.nl"
+ftp_username = "concours35@manegebartels.nl"
+ftp_password = "grYSDuYi"
 sync_interval_seconds = 60
 
 #   do not edit from here!
@@ -19,7 +19,7 @@ def local_get_files():
     global path_to_concours35_lists
     return_items = []
     try:
-        item_list = os.listdir(path_to_concours35_lists.rstrip("/"))
+        item_list = os.listdir(path_to_concours35_lists)
         
         for item in item_list:
             if ".rst" in item:
@@ -46,8 +46,8 @@ def do_loop(_ftp):
     remote_files = remote_get_files(_ftp)
     if not local_files == False and not remote_files == False:
         for local_file in local_files:
-            if local_file not in remote_files:
-                _ftp.copy_file( (path_to_concours35_lists.rstrip("/")) + "/" + local_file, local_file)
+            #if local_file not in remote_files:
+            _ftp.copy_file( (path_to_concours35_lists.rstrip("/")) + "/" + local_file, local_file)
         
         for remote_file in remote_files:
             if remote_file not in local_files:
